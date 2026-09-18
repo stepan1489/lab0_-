@@ -94,15 +94,15 @@ chmod a-rwx,u+rw,go+r opening_message
 cp experiments/tasting_results victor/office/successful_experiment
 cp -r victor/kitchen/molecular_station experiments/molecular_backup
 ln -s ../victor/kitchen/molecular_station/foam_recipe experiments/current_recipe
-ln -s ..victor/kitchen kitchen_entry
+ln -s victor/kitchen kitchen_entry
 ln opening_message victor/kitchen/shift_order
 cat victor/kitchen/hot_station/senya_report victor/kitchen/hot_station/fedya_report > victor/kitchen/team_report
 cat victor/kitchen/chef_order >> experiments/tasting_results
 mv victor/hall/reservations victor/office/evening_reservations
 
-ls -lR victor experiments archive_empty guest_reviewsм opening_message | grep '^-' | sort -nk5 | tail -n 5
+ls -lR victor experiments archive_empty opening_message | grep '^-' | sort -nk5 | tail -n 5
 grep -rhiE 'катя|баринов' victor experiments | grep -vi 'гост' | sort -r | head -n 6
-for f in victor/kitchen/hot_station/*_report; do head -n 1 "$f"; tail -n 1 "$f"; done | grep -iE 'блюд|баринов' | sort
+ls -lR victor experiments archive_empty opening_message | grep '^-' | sort -nk5 | tail -n 5
 (head -q -n 1 victor/kitchen/hot_station/*_report; tail -q -n 1 victor/kitchen/hot_station/*_report) | grep -Ei 'блюд|баринов' | sort
 grep -vE 'Сеня|Федя' victor/kitchen/team_report | grep 'блюд' | sort -r | wc -w
 ls -lR | grep '^l' | sort -rk9
