@@ -99,3 +99,12 @@ ln opening_message victor/kitchen/shift_order
 cat victor/kitchen/hot_station/senya_report victor/kitchen/hot_station/fedya_report > victor/kitchen/team_report
 cat victor/kitchen/chef_order >> experiments/tasting_results
 mv victor/hall/reservations victor/office/evening_reservations
+
+ls -lR victor experiments archive_empty guest_reviewsм opening_message | grep '^-' | sort -nk5 | tail -n 5
+grep -rhiE 'катя|баринов' victor experiments | grep -vi 'гост' | sort -r | head -n 6
+for f in victor/kitchen/hot_station/*_report; do head -n 1 "$f"; tail -n 1 "$f"; done | grep -iE 'блюд|баринов' | sort
+(head -q -n 1 victor/kitchen/hot_station/*_report; tail -q -n 1 victor/kitchen/hot_station/*_report) | grep -Ei 'блюд|баринов' | sort
+grep -vE 'Сеня|Федя' victor/kitchen/team_report | grep 'блюд' | sort -r | wc -w
+ls -lR lab0 | grep '^l' | sort -rk9
+ls -liR lab0 | awk '$2 ~ /^-/ && $3 == 2' | sort -n -k1
+
