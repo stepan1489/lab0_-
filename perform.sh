@@ -105,6 +105,14 @@ grep -rhiE 'катя|баринов' victor experiments | grep -vi 'гост' | 
 for f in victor/kitchen/hot_station/*_report; do head -n 1 "$f"; tail -n 1 "$f"; done | grep -iE 'блюд|баринов' | sort
 (head -q -n 1 victor/kitchen/hot_station/*_report; tail -q -n 1 victor/kitchen/hot_station/*_report) | grep -Ei 'блюд|баринов' | sort
 grep -vE 'Сеня|Федя' victor/kitchen/team_report | grep 'блюд' | sort -r | wc -w
-ls -lR lab0 | grep '^l' | sort -rk9
-ls -liR lab0 | awk '$2 ~ /^-/ && $3 == 2' | sort -n -k1
+ls -lR | grep '^l' | sort -rk9
+ls -liR | awk '$2 ~ /^-/ && $3 == 2' | sort -n -k1
 
+rm experiments/tasting_results
+rm experiments/current_recipe
+rm kitchen_entry
+rm opening_message
+rm victor/kitchen/shift_order
+rm victor/kitchen/molecular_station/nitrogen_notes
+rmdir archive_empty
+rm -r experiments/molecular_backup
