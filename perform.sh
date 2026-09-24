@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+mkdir lab0
+cd lab0
+
 mkdir -p victor/{kitchen/{molecular_station,hot_station},hall,office}
 mkdir experiments archive_empty
 
