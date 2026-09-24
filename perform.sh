@@ -109,7 +109,7 @@ grep -ril 'катя' victor/kitchen/molecular_station experiments/molecular_back
 (head -q -n 1 victor/kitchen/hot_station/*_report; tail -q -n 1 victor/kitchen/hot_station/*_report) | grep -Ei 'блюд|баринов' | sort
 grep -vE 'Сеня|Федя' victor/kitchen/team_report | grep 'блюд' | sort -r | wc -w
 ls -lR | grep '^l' | sort -rk9
-ls -liR | awk '$2 ~ /^-/ && $3 == 2' | sort -n -k1
+ls -liR | grep -E '^[[:space:]]*[0-9]+[[:space:]]+-[^[:space:]]+[[:space:]]+2[[:space:]]' | sort -n -k1
 
 rm experiments/tasting_results
 rm experiments/current_recipe
