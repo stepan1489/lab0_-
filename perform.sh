@@ -102,7 +102,7 @@ mv victor/hall/reservations victor/office/evening_reservations
 
 ls -lR victor experiments archive_empty opening_message | grep '^-' | sort -nk5 | tail -n 5
 grep -rhiE 'катя|баринов' victor experiments | grep -vi 'гост' | sort -r | head -n 6
-ls -lR victor experiments archive_empty opening_message | grep '^-' | sort -nk5 | tail -n 5
+grep -ril 'катя' victor/kitchen/molecular_station experiments/molecular_backup | wc -l
 (head -q -n 1 victor/kitchen/hot_station/*_report; tail -q -n 1 victor/kitchen/hot_station/*_report) | grep -Ei 'блюд|баринов' | sort
 grep -vE 'Сеня|Федя' victor/kitchen/team_report | grep 'блюд' | sort -r | wc -w
 ls -lR | grep '^l' | sort -rk9
